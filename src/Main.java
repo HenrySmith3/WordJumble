@@ -31,7 +31,7 @@ public class Main {
             boolean matchFlag = true;
             for (Character c : word.toCharArray()) {
                 //a little dirty, but it makes it a one liner without having to import anything not in core library.
-                if (!characterMap.containsKey(c) || characterMap.get(c) < word.replaceAll("[^.]", "").length()) {
+                if (!characterMap.containsKey(c) || characterMap.get(c) < word.replaceAll("[^" + c + "]", "").length()) {
                     //not enough occurances in input to match, so this is not a match.
                     matchFlag = false;
                 }
